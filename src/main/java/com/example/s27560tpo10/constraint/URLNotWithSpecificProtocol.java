@@ -1,0 +1,20 @@
+package com.example.s27560tpo10.constraint;
+
+import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Constraint(validatedBy = URLValidator.class)
+@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface URLNotWithSpecificProtocol {
+    String message() default "{com.example.s27560tpo10.InvalidURL.message}";
+    Class<?>[] groups() default {};
+    Class<? extends Payload>[] payload() default {};
+
+    String protocol() default "https";
+}

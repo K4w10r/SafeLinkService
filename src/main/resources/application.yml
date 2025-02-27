@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: s27560-TPO10
+  h2:
+    console:
+      path: /console
+  datasource:
+    url: jdbc:h2:mem:links
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    defer-datasource-initialization: true
